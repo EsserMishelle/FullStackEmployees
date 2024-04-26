@@ -1,0 +1,126 @@
+/* styles.css */
+.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 0.25rem;
+    height: 28px; 
+    padding: 0px 7px;  
+    font-size: 19px;  
+  }
+  
+  .form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  
+  .form-floating {
+    position: relative; 
+}
+
+  .form-floating > .form-control:not(:placeholder-shown) {
+    padding-top: 1rem;
+    padding-bottom: .1rem;
+  }
+  
+  .form-floating > .form-control:focus {
+    border-color: #86b7fe;
+  }
+  
+  .form-floating > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    padding: .4rem 0.15rem 0rem 0.7rem;
+    pointer-events: none; 
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    width: 70%; 
+    color: #6c757d;
+  }
+  
+  .form-floating > .form-control:focus + label {
+    opacity: 1; 
+    transform: scale(0.70) translateY(-0.7rem) translateX(0.62rem);
+  }
+  
+  .input-field {
+    width: 70%;
+    height: 15px; 
+  }
+
+  .prev {
+    margin-left: 20px; 
+  }
+
+  .next {
+    margin-left: 15px;
+  } 
+
+    .tab-menu button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    margin-right: 5px;
+  }
+  
+  .tab-menu button.active {
+    background-color: #ddd;
+  }
+  
+  .tab-content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 10px;
+  }
+  
+  /*dayOffEdit component*/
+  
+  /* General table styles for alignment */
+.daysoffedit-table {
+  width: 100%; 
+  border-collapse: collapse; 
+} 
+
+.daysoffedit-table input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.daysoffedit-table th, .daysoffedit-table td {
+  text-align: left;
+  padding: 8px; 
+  width: 20%;
+  /* border: 1px solid #ccc;  */
+}
+
+/* Specific column widths */
+.daysoffedit-table .dayoffedit-leave-type { width: 10%; }
+.daysoffedit-table .dayoffedit-leave-starts { width: 20%; }
+.daysoffedit-table .dayoffedit-leave-ends { width: 20%; }
+.daysoffedit-table .dayoffedit-notes { width: 35%; }
+.daysoffedit-table .dayoffedit-actions { width: 15%; }
+
+
+/* search-form component */
+  .search-page-button-style {
+    background-color: #9f7925;
+    height: 35px;
+    color: white;
+    font-family: "sans-serif-light";
+    font-size: 17px;
+    padding: 5px 9px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px gray;
+    margin: 12px 15px 10px 10px;
+    border: none; 
+  }
+  .navbar-custom {
+  margin-bottom: 0; 
+  }
+  .control-panel {
+    margin-top: 0; 
+    align-items: center; 
+    padding-right: 20px; 
+  }
