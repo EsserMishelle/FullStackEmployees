@@ -15,6 +15,7 @@ import EmpDep from "./components/EmpDep";
 import DaysOff from "./components/DaysOff";
 import Departments from "./components/Departments";
 import JobHistory from "./components/JobHistory";
+import DaysOffChart from "./components/DaysOffChart";
 
 // toast.configure({
 //   position: "top-right",
@@ -38,6 +39,7 @@ function App() {
   // useEffect(() => {
   //   toast("Hello, world!");
   // }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -53,6 +55,7 @@ function App() {
         <Route path="/daysoff/:emp_id" element={<DaysOff />} />
         <Route path="/jobhistory/:emp_id" element={<JobHistory />} />
         <Route path="/departments" element={<Departments />} />
+        <Route path="/daysOffChart" element={<DaysOffChart />} />
       </Routes>
     </BrowserRouter>
   );

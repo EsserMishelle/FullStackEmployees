@@ -1,18 +1,13 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import logo5 from "./images/logo5.png";
+
 export default function Main() {
   return (
     <div
       className="container-fluid"
       style={{ backgroundColor: "#9ed8fe", minHeight: "100vh" }}
     >
-      <img
-        src={logo5}
-        alt="logo for the employee database"
-        style={{ width: "25%", height: "auto", borderRadius: "10px" }}
-      />
       <div className="row justify-content-center align-items-center">
         <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
           <div

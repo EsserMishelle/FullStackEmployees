@@ -26,7 +26,6 @@ export default function DaysOffEdit() {
 
   const handleNewInputChange = (event) => {
     const { name, value } = event.target;
-    console.log(newDayOff.leave_type);
     setNewDayOff((prev) => ({
       ...prev,
       [name]: value,
@@ -113,27 +112,12 @@ export default function DaysOffEdit() {
             daysOff.map((dayOff, index) => (
               <tr key={index}>
                 <td>
-                  <select
-                    className="input"
-                    // type="text"
-                    name="leave_type"
-                    value={dayOff.leave_type}
-                    onChange={(e) => handleInputChange(index, e)}
-                    style={{ width: "100%", height: "30px" }}
-                  >
-                    <option value="">Select </option>
-                    <option value="Sick">Sick</option>
-                    <option value="Vacation">Vacation</option>
-                    <option value="Training">Training</option>
-                    <option value="Others">Others</option>
-                  </select>
-                  {/* <input
+                  <input
                     type="text"
                     name="leave_type"
                     value={dayOff.leave_type}
                     onChange={(e) => handleInputChange(index, e)}
-                    
-                  /> */}
+                  />
                 </td>
                 <td>
                   <input
@@ -170,21 +154,15 @@ export default function DaysOffEdit() {
               </tr>
             ))}
           <tr>
-            <select
-              className="input"
-              // type="text"
-              name="leave_type"
-              value={newDayOff.leave_type}
-              onChange={handleNewInputChange}
-              style={{ width: "100%", height: "30px" }}
-            >
-              <option value="">Select </option>
-              <option value="Sick">Sick</option>
-              <option value="Vacation">Vacation</option>
-              <option value="Training">Training</option>
-              <option value="Others">Others</option>
-            </select>
-
+            <td>
+              <input
+                type="text"
+                name="leave_type"
+                value={newDayOff.leave_type}
+                onChange={handleNewInputChange}
+                placeholder="New Leave Type"
+              />
+            </td>
             <td>
               <input
                 type="date"
@@ -211,25 +189,15 @@ export default function DaysOffEdit() {
               />
             </td>
             <td>
-              {" "}
               <button onClick={handleAddDayOff}>Add</button>
             </td>
+            <Link to="/daysOffChart">
+              <button>View Days Off Chart</button>
+            </Link>
+            <DaysOffChart daysOffData={daysOff} />
           </tr>
         </tbody>
       </table>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "left",
-          alignItems: "center",
-        }}
-      >
-        <DaysOffChart daysOffData={daysOff} />
-      </div>
-      <Link to="/daysOffChart">
-        {/* <button>View Days Off Chart</button>
-        <DaysOffChart daysOffData={daysOff} /> */}
-      </Link>
     </div>
   );
 }
