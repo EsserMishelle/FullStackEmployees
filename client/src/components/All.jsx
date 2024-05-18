@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import backgroundImageAll from "./images/liquidwaveBackground25479890_reverse.jpg";
 export default function All() {
   const [data, setData] = useState([]);
   const [deleted, setDeleted] = useState(true);
@@ -86,7 +87,16 @@ export default function All() {
   return (
     <div
       className="container-fluid vh-200 vw-100"
-      style={{ backgroundColor: "#9ed8fe" }}
+      // style={{ backgroundColor: "#9ed8fe" }}
+      style={{
+        backgroundImage: `url(${backgroundImageAll})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        padding: "20px",
+        borderRadius: "10px",
+        minHeight: "100vh",
+        color: "black",
+      }}
     >
       {/* Dropdown for selecting records per page */}
       <div className="d-flex justify-content-end">

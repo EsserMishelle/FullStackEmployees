@@ -23,5 +23,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-*copy
+# files that are my backups before more tweaking and improvision
+src/components/**/_*.jsx
+src/components/**/_*.js
+
+
+#Do not ignore files in src/components/images 
+!src/components/images/*
 

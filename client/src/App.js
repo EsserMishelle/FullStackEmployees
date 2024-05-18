@@ -15,31 +15,11 @@ import EmpDep from "./components/EmpDep";
 import DaysOff from "./components/DaysOff";
 import Departments from "./components/Departments";
 import JobHistory from "./components/JobHistory";
-import DaysOffChart from "./components/DaysOffChart";
-
-// toast.configure({
-//   position: "top-right",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-// });
-
-// toast.configure();
-// console.log(toast);
+import DaysOffChartPage from "./components/DaysOffChartPage";
+// import Charts from "./components/Charts";
+import { FaChartSimple } from "react-icons/fa6";
 
 function App() {
-  // <button
-  //   onClick={() => toast.success("Test Toast: This is a success message!")}
-  // >
-  //   Test Toast Notification
-  // </button>;
-  // useEffect(() => {
-  //   toast("Hello, world!");
-  // }, []);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -55,7 +35,8 @@ function App() {
         <Route path="/daysoff/:emp_id" element={<DaysOff />} />
         <Route path="/jobhistory/:emp_id" element={<JobHistory />} />
         <Route path="/departments" element={<Departments />} />
-        <Route path="/daysOffChart" element={<DaysOffChart />} />
+        <Route path="/daysOffChart" element={<DaysOffChartPage />} />
+        {/* <Route path="/charts" element={<Charts />} /> */}
       </Routes>
     </BrowserRouter>
   );

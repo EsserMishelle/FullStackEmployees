@@ -1,4 +1,90 @@
 /* styles.css */
+/* attribution: "https://www.vecteezy.com/ Metal Texture Vectors by Vecteezy</a> */
+
+.background-main {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.background-main::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url('./components/images/metalBackground36.jpg'); */
+  background-image: url('./components/images/metalBackground32945968_2.jpg');
+  /* background-image: url('./components/images/metalBackground411-01.jpg'); */
+  background-position: center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-Height: "100vh";
+  /* min-Width: "100vw"; */
+  /* opacity: 1.7;  */
+  z-index: -1; 
+}
+
+.card-main1 {
+  background-image: url('./components/images/silver30679232_new1.jpg');
+  box-shadow: "2px 3px gray";
+  height: "250px";
+  width: "200px";
+  opacity: .85;
+  background-size: cover;
+  border-radius: "7px";
+}
+
+.card-main2 {
+  background-image: url('./components/images/silver30679232Blue_new2.jpg');
+  box-shadow: "2px 3px gray";
+  height: "250px";
+  width: "200px";
+  opacity: .85;
+  background-size: cover;
+}
+
+.card-main3 {
+  background-image: url('./components/images/silver30679232Blue_new3.jpg');
+  box-shadow: "2px 3px gray";
+  height: "250px";
+  width: "200px";
+  opacity: .85;
+  background-size: cover;
+}
+
+.card-main4 {
+  background-image: url('./components/images/silver30679232Blue_new4.jpg');
+  box-shadow: "2px 3px gray";
+  height: "250px";
+  width: "200px";
+  opacity: .95;
+  background-size: cover;
+  border-radius: "7px",
+}
+
+.card-main5 {
+  background-image: url('./components/images/silver30679232_new1.jpg');
+  box-shadow: "2px 3px gray";
+  height: "250px";
+  width: "200px";
+  opacity: .95;
+  background-size: cover;
+  border-radius: "7px";
+}
+
+   
+
+
 .form-control {
     border: 2px solid #ced4da;
     border-radius: 0.25rem;

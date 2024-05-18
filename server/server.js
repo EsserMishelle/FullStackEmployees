@@ -77,7 +77,19 @@ app.get("/jobhistory/:emp_id", (req, res) => {
   });
 });
 
-////View employee days off dates and leave types
+////View ALL employee days off
+app.get("/daysoff", (req, res) => {
+  const sql = `SELECT * FROM daysoff`;
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.log("Day off query error: ", err);
+      return res.status(500).json({ err: err.message });
+    }
+    res.json(results);
+  });
+});
+
+////View employee days off dates and leave types by emp id
 app.get("/daysoff/:emp_id", (req, res) => {
   const emp_id = req.params.emp_id;
   const sql = `

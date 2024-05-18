@@ -1,108 +1,175 @@
-import { useEffect } from "react";
-import Chart from "chart.js/auto";
+import React, { useEffect, useState } from "react";
+import { Pie, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from "chart.js";
 
-function DaysOffChart({ daysOffData }) {
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement
+);
+
+const DaysOffChart = ({ daysOffData }) => {
+  const [pieData, setPieData] = useState({});
+  const [barData, setBarData] = useState({});
+
   useEffect(() => {
-    const ctxBar = document.getElementById("barChart").getContext("2d");
-    const ctxPie = document.getElementById("pieChart").getContext("2d");
+    if (daysOffData && daysOffData.length > 0) {
+      const calculatePieData = () => {
+        const leaveTypes = ["Vacation", "Sick", "Training", "Others"];
+        const leaveCounts = leaveTypes.map(
+          (type) => daysOffData.filter((day) => day.leave_type === type).length
+        );
+        const totalLeaves = leaveCounts.reduce((acc, count) => acc + count, 0);
 
-    // Process data to group by leave_type
-    const leaveTypeData = daysOffData.reduce((acc, curr) => {
-      if (!acc[curr.leave_type]) {
-        acc[curr.leave_type] = [];
-      }
-      acc[curr.leave_type].push(curr);
-      return acc;
-    }, {});
+        const leavePercentages = leaveCounts.map(
+          (count) => (count / totalLeaves) * 100
+        );
 
-    // Generate labels and datasets for bar chart and pie chart
-    const barLabels = Object.keys(leaveTypeData);
-    const barData = barLabels.map((leaveType) =>
-      leaveTypeData[leaveType].reduce((totalDays, data) => {
-        const start = new Date(data.leave_starts);
-        const end = new Date(data.leave_ends);
-        return totalDays + (end - start) / (1000 * 3600 * 24);
-      }, 0)
-    );
-    const pieLabels = barLabels;
-    const pieData = barData;
-
-    const barChart = new Chart(ctxBar, {
-      type: "bar",
-      data: {
-        labels: barLabels,
-        datasets: [
-          {
-            label: "Vacation Duration",
-            data: barData,
-            backgroundColor: "rgba(255,0,0,0.3)",
-            borderColor: "rgba(75, 192, 192, 1)",
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            ticks: {
-              beginAtZero: true,
-              color: "blue",
-              font: {
-                weight: "bold",
-                size: 16,
-              },
+        setPieData({
+          labels: leaveTypes,
+          datasets: [
+            {
+              label: "Day Off Categories",
+              data: leavePercentages,
+              backgroundColor: [
+                "rgba(70, 130, 180, 0.8)",
+                "rgba(34, 139, 34, 0.8)",
+                "rgba(128, 0, 0, 0.8)",
+                "rgba(160, 82, 45, 0.8)",
+              ],
+              borderColor: [
+                "rgba(70, 130, 180, 1)",
+                "rgba(34, 139, 34, 1)",
+                "rgba(128, 0, 0, 1)",
+                "rgba(160, 82, 45, 1)",
+              ],
+              borderWidth: 1,
             },
-          },
-          x: {
-            ticks: {
-              color: "black",
-              font: {
-                weight: "bold",
-                size: 16,
-              },
+          ],
+        });
+      };
+
+      const calculateBarData = () => {
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const leaveCountsPerMonth = months.map(
+          (_, index) =>
+            daysOffData.filter(
+              (day) => new Date(day.leave_starts).getMonth() === index
+            ).length
+        );
+
+        setBarData({
+          labels: months,
+          datasets: [
+            {
+              label: "Employee Days Off By Month",
+              data: leaveCountsPerMonth,
+              backgroundColor: "rgba(153, 102, 255, 0.8)",
+              borderColor: "rgba(153, 102, 255, 1)",
+              borderWidth: 1,
             },
-          },
-        },
-      },
-    });
+          ],
+        });
+      };
 
-    const pieChart = new Chart(ctxPie, {
-      type: "pie",
-      data: {
-        labels: pieLabels,
-        datasets: [
-          {
-            label: "Number of Days Off",
-            data: pieData,
-            backgroundColor: pieLabels.map(
-              () =>
-                `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(
-                  Math.random() * 255
-                )}, ${Math.floor(Math.random() * 255)}, 0.7)`
-            ),
-          },
-        ],
-      },
-    });
-
-    return () => {
-      barChart.destroy();
-      pieChart.destroy();
-    };
+      calculatePieData();
+      calculateBarData();
+    }
   }, [daysOffData]);
 
+  const pieOptions = {
+    plugins: {
+      legend: {
+        position: "top",
+        labels: {
+          color: "black", //black is readable, white text is pretty
+        },
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+  };
+
+  const barOptions = {
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          color: "black", //black is readable, white text is pretty
+        },
+      },
+      x: {
+        ticks: {
+          color: "black", // black text is readable
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+  };
+
   return (
-    <div>
-      <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-        <h2>Bar Chart - Vacation Duration by Leave Type</h2>
-        <canvas id="barChart" width="400" height="300"></canvas>
+    <div
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        padding: "20px",
+        borderRadius: "10px",
+      }}
+    >
+      <h2 style={{ textAlign: "center", color: "black" }}>
+        Days Off by Categories
+      </h2>
+      <div style={{ width: "50%", margin: "0 auto" }}>
+        {pieData.labels ? (
+          <Pie data={pieData} options={pieOptions} />
+        ) : (
+          <p>Loading pie chart...</p>
+        )}
       </div>
-      <div style={{ maxWidth: "600px", margin: "20px auto" }}>
-        <h2>Pie Chart - Vacation Count by Leave Type</h2>
-        <canvas id="pieChart" width="400" height="300"></canvas>
+
+      <h2 style={{ textAlign: "center", color: "black" }}>
+        Days Offs by Month
+      </h2>
+      <div style={{ width: "70%", margin: "0 auto" }}>
+        {barData.labels ? (
+          <Bar data={barData} options={barOptions} />
+        ) : (
+          <p>Loading bar chart...</p>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default DaysOffChart;
