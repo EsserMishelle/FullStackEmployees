@@ -8,6 +8,8 @@ import Navbar from "./Navbar";
 import DaysOffEdit from "./DaysOffEdit";
 import JobHistory from "./JobHistory";
 import { Tab, Tabs } from "react-bootstrap";
+import backgroundImageEditMain from "./images/metalBackground36_purple.jpg";
+
 import "../styles.css";
 
 export default function EditMain() {
@@ -90,7 +92,18 @@ export default function EditMain() {
   };
 
   return (
-    <div className="container-fluid p-4" style={{ backgroundColor: "#b4b0f5" }}>
+    <div
+      className="container-fluid p-4"
+      style={{
+        backgroundImage: `url(${backgroundImageEditMain})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        padding: "20px",
+        borderRadius: "10px",
+        minHeight: "100vh",
+        color: "black",
+      }}
+    >
       <Navbar />
       {/* Navigation buttons */}
 
@@ -305,11 +318,11 @@ export default function EditMain() {
         className="my-3"
         style={{ fontWeight: "bolder" }}
       >
-        <Tab eventKey="jobHistory" title="Job History">
-          <JobHistory emp_id={emp_id} />
-        </Tab>
         <Tab eventKey="daysOff" title="Days Off">
           <DaysOffEdit emp_id={emp_id} />
+        </Tab>
+        <Tab eventKey="jobHistory" title="Job History">
+          <JobHistory emp_id={emp_id} />
         </Tab>
       </Tabs>
     </div>

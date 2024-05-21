@@ -26,8 +26,6 @@ yarn-error.log*
 # files that are my backups before more tweaking and improvision
 src/components/**/*_*.*
 
-
-
 #Do not ignore files in src/components/images 
 !src/components/images/*
 !src/components/images/

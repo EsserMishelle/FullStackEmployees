@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useParams, useNavigate } from "react-router-dom";
+import backgroundImageSearch from "./images/liquidwave25479890.jpg";
 import "../styles.css";
 
 export default function SearchForm() {
@@ -132,7 +133,15 @@ export default function SearchForm() {
   return (
     <div
       className="container-fluid vh-200 vw-100"
-      style={{ backgroundColor: "#c2986b" }}
+      style={{
+        backgroundImage: `url(${backgroundImageSearch})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        padding: "20px",
+        borderRadius: "10px",
+        minHeight: "100vh",
+        color: "black",
+      }}
     >
       <div className="d-flex justify-content-end control-panel">
         <Navbar className="navbar-custom" />

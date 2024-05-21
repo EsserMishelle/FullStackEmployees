@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import backgroundImageAll from "./images/liquidwaveBackground25479890_reverse.jpg";
+import backgroundImageAll from "./images/liquidwave25479890_reverse.jpg";
 export default function All() {
   const [data, setData] = useState([]);
   const [deleted, setDeleted] = useState(true);

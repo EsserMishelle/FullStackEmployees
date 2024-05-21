@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import backgroundImageEditMain from "./images/metalBackground2907_1.jpg";
 
 export default function Create() {
   // const [phoneNumber, setPhoneNumber] = useState("");
@@ -88,8 +89,16 @@ export default function Create() {
 
   return (
     <div
-      className="container vh-200 vw-200"
-      style={{ backgroundColor: "#ceebba" }}
+      className="container-fluid p-4"
+      style={{
+        backgroundImage: `url(${backgroundImageEditMain})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        padding: "20px",
+        borderRadius: "10px",
+        minHeight: "100vh",
+        color: "black",
+      }}
     >
       <div className="row">
         <h3>Add Employee </h3>

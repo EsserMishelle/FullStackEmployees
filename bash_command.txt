@@ -1,0 +1,167 @@
+
+fille@DESKTOP-4JS80HJ MINGW64 ~
+$ cd d:
+
+fille@DESKTOP-4JS80HJ MINGW64 /d
+$ cd react/ps/mygit/fullstackemployees
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ find client/src/components -type f -name '*_*.*' -exec git rm --cached {} \;
+rm 'client/src/components/All_copy.jsx'
+rm 'client/src/components/Charts_copy.jsx'
+rm 'client/src/components/Create_copy.jsx'
+rm 'client/src/components/DaysOffChart_old.jsx'
+rm 'client/src/components/DaysOffEdit_chart_works.jsx'
+rm 'client/src/components/EditMain_copy.jsx'
+rm 'client/src/components/EditNavbar_copy.jsx'
+rm 'client/src/components/Edit_copy.jsx'
+rm 'client/src/components/EmpDep_copy.jsx'
+rm 'client/src/components/images/liquidwaveBackground25479890_1.jpg'
+rm 'client/src/components/images/liquidwaveBackground25479890_2.jpg'
+rm 'client/src/components/images/liquidwaveBackground25479890_3.jpg'
+rm 'client/src/components/images/liquidwaveBackground25479890_4.jpg'
+rm 'client/src/components/images/liquidwaveBackground25479890_reverse.jpg'
+rm 'client/src/components/images/metalBackground2410714_1.jpg'
+rm 'client/src/components/images/metalBackground32945968_1.jpg'
+rm 'client/src/components/images/metalBackground32945968_2.jpg'
+rm 'client/src/components/images/metallic_background46.jpg'
+rm 'client/src/components/images/silver30679232Blue_new1.jpg'
+rm 'client/src/components/images/silver30679232Blue_new2.jpg'
+rm 'client/src/components/images/silver30679232Blue_new3.jpg'
+rm 'client/src/components/images/silver30679232Blue_new4.jpg'
+rm 'client/src/components/images/silver30679232_new.jpg'
+rm 'client/src/components/images/silver30679232_new1.jpg'
+rm 'client/src/components/images/vecteezy_metal-brushed-texture-background-grey-metal_3685335.jpg'
+rm 'client/src/components/images/vecteezy_rough-metallic-surface-texture-background_2410714.jpg'
+rm 'client/src/components/JobHistory_copy.jsx'
+rm 'client/src/components/Main_copy.jsx'
+rm 'client/src/components/Main_newest1.jsx'
+rm 'client/src/components/Main_wo_logo.jsx'
+rm 'client/src/components/Navbar_copy.jsx'
+rm 'client/src/components/Read_copy.jsx'
+rm 'client/src/components/SearchForm_copy.jsx'
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git reset
+Unstaged changes after reset:
+M       .gitignore
+M       client/.gitignore
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ find src/components -type f -name '*_*.*' ! -path 'src/components/images/*' -exec git rm --cache {} \;
+find: ‘src/components’: No such file or directory
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ find client/src/components -type f -name '*_*.*' ! -path 'client/src/components/images/*' -exec git rm --cache {} \;
+rm 'client/src/components/All_copy.jsx'
+rm 'client/src/components/Charts_copy.jsx'
+rm 'client/src/components/Create_copy.jsx'
+rm 'client/src/components/DaysOffChart_old.jsx'
+rm 'client/src/components/DaysOffEdit_chart_works.jsx'
+rm 'client/src/components/EditMain_copy.jsx'
+rm 'client/src/components/EditNavbar_copy.jsx'
+rm 'client/src/components/Edit_copy.jsx'
+rm 'client/src/components/EmpDep_copy.jsx'
+rm 'client/src/components/JobHistory_copy.jsx'
+rm 'client/src/components/Main_copy.jsx'
+rm 'client/src/components/Main_newest1.jsx'
+rm 'client/src/components/Main_wo_logo.jsx'
+rm 'client/src/components/Navbar_copy.jsx'
+rm 'client/src/components/Read_copy.jsx'
+rm 'client/src/components/SearchForm_copy.jsx'
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    client/src/components/All_copy.jsx
+        deleted:    client/src/components/Charts_copy.jsx
+        deleted:    client/src/components/Create_copy.jsx
+        deleted:    client/src/components/DaysOffChart_old.jsx
+        deleted:    client/src/components/DaysOffEdit_chart_works.jsx
+        deleted:    client/src/components/EditMain_copy.jsx
+        deleted:    client/src/components/EditNavbar_copy.jsx
+        deleted:    client/src/components/Edit_copy.jsx
+        deleted:    client/src/components/EmpDep_copy.jsx
+        deleted:    client/src/components/JobHistory_copy.jsx
+        deleted:    client/src/components/Main_copy.jsx
+        deleted:    client/src/components/Main_newest1.jsx
+        deleted:    client/src/components/Main_wo_logo.jsx
+        deleted:    client/src/components/Navbar_copy.jsx
+        deleted:    client/src/components/Read_copy.jsx
+        deleted:    client/src/components/SearchForm_copy.jsx
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   client/.gitignore
+
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git commit -m "Removing files with underscores from client/src/components except client/src/components/images"
+[main 738b097] Removing files with underscores from client/src/components except client/src/components/images
+ 16 files changed, 3687 deletions(-)
+ delete mode 100644 client/src/components/All_copy.jsx
+ delete mode 100644 client/src/components/Charts_copy.jsx
+ delete mode 100644 client/src/components/Create_copy.jsx
+ delete mode 100644 client/src/components/DaysOffChart_old.jsx
+ delete mode 100644 client/src/components/DaysOffEdit_chart_works.jsx
+ delete mode 100644 client/src/components/EditMain_copy.jsx
+ delete mode 100644 client/src/components/EditNavbar_copy.jsx
+ delete mode 100644 client/src/components/Edit_copy.jsx
+ delete mode 100644 client/src/components/EmpDep_copy.jsx
+ delete mode 100644 client/src/components/JobHistory_copy.jsx
+ delete mode 100644 client/src/components/Main_copy.jsx
+ delete mode 100644 client/src/components/Main_newest1.jsx
+ delete mode 100644 client/src/components/Main_wo_logo.jsx
+ delete mode 100644 client/src/components/Navbar_copy.jsx
+ delete mode 100644 client/src/components/Read_copy.jsx
+ delete mode 100644 client/src/components/SearchForm_copy.jsx
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 512 bytes | 512.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/EsserMishelle/fullstackemployees.git
+To https://github.com/EsserMishelle/FullStackEmployees
+   51c03e0..738b097  main -> main
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git add -A .
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'client/.gitignore', LF will be replaced by CRLF the next time Git touches it
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git commit -m "Apply .gitignore rules and stage all changes"
+[main bd40385] Apply .gitignore rules and stage all changes
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 553 bytes | 553.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/EsserMishelle/fullstackemployees.git
+To https://github.com/EsserMishelle/FullStackEmployees
+   738b097..bd40385  main -> main
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$ ^C
+
+fille@DESKTOP-4JS80HJ MINGW64 /d/react/ps/mygit/fullstackemployees (main)
+$

@@ -224,12 +224,12 @@ export default function DaysOffEdit() {
           alignItems: "center",
         }}
       >
-        <DaysOffChart daysOffData={daysOff} />
+        {/* <DaysOffChart daysOffData={daysOff} /> */}
       </div>
-      <Link to="/daysOffChart">
-        {/* <button>View Days Off Chart</button>
+      {/* <Link to="/daysOffChart"> */}
+      {/* <button>View Days Off Chart</button>
         <DaysOffChart daysOffData={daysOff} /> */}
-      </Link>
+      {/* </Link> */}
     </div>
   );
 }
